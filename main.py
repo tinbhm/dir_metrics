@@ -13,3 +13,7 @@ file_count_gauge = Gauge('file_count_total', 'Total number of files in the direc
 file_size_total = Gauge('file_size_bytes_total', 'Total size of files in the directory', ['directory'])
 file_age_oldest = Gauge('file_age_oldest_seconds', 'Age of the oldest file in the directory', ['directory'])
 file_age_newest = Gauge('file_age_newest_seconds', 'Age of the newest file in the directory', ['directory'])
+
+def load_config(config_path):
+    with open(config_path, 'r') as f:
+        return yaml.safe_load(f)
