@@ -1,0 +1,9 @@
+directories:
+
+  - name: "tmp"
+    path: /tmp
+    recursive: True
+
+  - name: "home"
+    path: /home
+    recursive: False
