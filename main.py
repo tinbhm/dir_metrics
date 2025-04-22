@@ -17,3 +17,6 @@ file_age_newest = Gauge('file_age_newest_seconds', 'Age of the newest file in th
 def load_config(config_path):
     with open(config_path, 'r') as f:
         return yaml.safe_load(f)
+
+def matches_patterns(filename, patterns):
+    return any(fnmatch.fnmatch(filename, pattern) for pattern in patterns)
