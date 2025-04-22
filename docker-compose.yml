@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  exporter:
+    build: .
+    container_name: prometheus_file_exporter
+    volumes:
+      - ./config.yml:/app/config.yml:ro
+      - /:/host:ro
+    ports:
+      - "3060:3060"
+    user: root

@@ -1,9 +1,18 @@
+# Die config.yml verwendet Shell-Pattern
+port: 3060
+interval: 15
+
 directories:
+  - name: logs
+    path: /var/log
+    recursive: true
+    include_patterns:
+      - "*.log"
+      - "*.err"
+    include_dirs:
+      - nginx
+      - apache2
 
-  - name: "tmp"
-    path: /tmp
-    recursive: True
-
-  - name: "home"
-    path: /home
-    recursive: False
+  - name: zomboid
+    path: /home/tboehm/Zomboid
+    recursive: false
